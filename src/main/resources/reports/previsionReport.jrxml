@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="previsionReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c7cd4394-e72f-4b2e-b82a-ed436fa4167a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="425"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="562"/>
+	<parameter name="ANNEE_0" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[2023]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ANNEE_1" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[2024]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ANNEE_2" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[2025]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LOGO" class="java.awt.image.BufferedImage"/>
+	<parameter name="VILLE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Ouagadougou"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DATE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["01/01/2023"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="json">
+		<![CDATA[]]>
+	</queryString>
+	<field name="idStructure" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="idStructure"/>
+		<fieldDescription><![CDATA[idStructure]]></fieldDescription>
+	</field>
+	<field name="libelleFamille" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="libelleFamille"/>
+		<fieldDescription><![CDATA[libelleFamille]]></fieldDescription>
+	</field>
+	<field name="libelleStructure" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="libelleStructure"/>
+		<fieldDescription><![CDATA[libelleStructure]]></fieldDescription>
+	</field>
+	<field name="libelleSousFamille" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="libelleSousFamille"/>
+		<fieldDescription><![CDATA[libelleSousFamille]]></fieldDescription>
+	</field>
+	<field name="valAnne0" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="valAnne0"/>
+		<fieldDescription><![CDATA[valAnne0]]></fieldDescription>
+	</field>
+	<field name="valAnne1" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="valAnne1"/>
+		<fieldDescription><![CDATA[valAnne1]]></fieldDescription>
+	</field>
+	<field name="valAnne2" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="valAnne2"/>
+		<fieldDescription><![CDATA[valAnne2]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="total"/>
+		<fieldDescription><![CDATA[total]]></fieldDescription>
+	</field>
+	<group name="Groupe par strucure">
+		<groupExpression><![CDATA[$F{idStructure}]]></groupExpression>
+		<groupHeader>
+			<band height="25">
+				<textField textAdjust="ScaleFont">
+					<reportElement x="0" y="0" width="555" height="25" uuid="175ee4e6-9a97-46ac-87c7-dbc9bd0270f9">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Structure: "+$F{libelleStructure}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="40" width="555" height="30" uuid="7ba3a8f0-5829-478e-bf24-9c128a055895"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LES PREVISIONS CENTRALISEES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="0" width="175" height="30" uuid="797602fd-678c-4f3b-b1b7-4bb444e981e1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{VILLE}+", le "+$P{DATE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="500" y="0" width="55" height="30" backcolor="#F0F0F0" uuid="90e7871e-b046-4375-8799-cb167e36ee30"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="335" height="30" backcolor="#F0F0F0" uuid="56f829a6-c7be-4bb1-8526-f9036835e1c3">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Designation]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="335" y="0" width="55" height="30" backcolor="#F0F0F0" uuid="0fdcca1a-9c68-4b7b-bc25-db4dbe352632">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{ANNEE_0}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="390" y="0" width="55" height="30" backcolor="#F0F0F0" uuid="b080e3db-46a7-40de-84df-c915f395b17c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{ANNEE_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="445" y="0" width="55" height="30" backcolor="#F0F0F0" uuid="da4a10a6-c061-410a-87bb-e6031aee3757">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{ANNEE_2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="335" height="25" uuid="edc56269-0aa6-48c3-90a3-4b70572a1900">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libelleSousFamille}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="335" y="0" width="55" height="25" uuid="8b51d641-6ce6-41ce-8dfe-d1e1d5afb273">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valAnne0}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="390" y="0" width="55" height="25" uuid="3aac7bd1-2022-4913-b2d5-e94147e1422c">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valAnne1}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="445" y="0" width="55" height="25" uuid="3490706a-45e9-46e0-b542-5e18d05c159a">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valAnne2}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="500" y="0" width="55" height="25" backcolor="#F5F2F2" uuid="38831394-3423-4d15-9108-f13a50c872a0">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

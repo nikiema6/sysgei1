@@ -1,0 +1,42 @@
+spring:
+  resources:
+    add-mappings: false
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  profiles:
+    active: @activatedProperties@
+  liquibase:
+    change-log: classpath:db/changelog/master.xml
+    enabled: true
+
+  mail:
+    host: mailer.gov.bf
+    port: 587
+    username:    #Replace this field with your Gmail username.
+    password:        #Replace this field with your Gmail password.
+    protocol: smtp
+    properties.mail.smtp:
+      connectiontimeout: 70000
+      timeout: 30000
+      writetimeout: 70000
+      auth: true
+      starttls.enable: true
+      ssl.trust: mailer.gov.bf
+
+# ===============================
+# KEYCLOAK CONFIG
+# ===============================
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/auth/realms/sysgeirealm
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+logging:
+  level:
+    org.springframework.security: trace
